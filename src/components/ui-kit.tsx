@@ -36,7 +36,7 @@ export function ButtonLink({
 }: { to: string; hash?: string; children: ReactNode; className?: string } & BtnVariants) {
   return (
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    <Link to={to as any} hash={hash} className={cn(buttonVariants({ variant, size }), className)}>
+    <Link to={to as any} {...(hash ? { hash } : {})} className={cn(buttonVariants({ variant, size }), className)}>
       {children}
     </Link>
   );

@@ -30,7 +30,7 @@ export type Cart = Record<string, number>;
 
 export function addItem(cart: Cart, id: string, qty = 1): Cart {
   const next = { ...cart, [id]: (cart[id] ?? 0) + qty };
-  if (next[id] <= 0) delete next[id];
+  if ((next[id] ?? 0) <= 0) delete next[id];
   return next;
 }
 

@@ -11,7 +11,7 @@ describe("demo cart", () => {
   });
   it("drops an item when quantity reaches zero", () => {
     const c = addItem(addItem({}, "eggs"), "eggs", -1);
-    expect(c.eggs).toBeUndefined();
+    expect(c["eggs"]).toBeUndefined();
   });
   it("removes an item entirely", () => {
     expect(removeItem({ eggs: 3 }, "eggs")).toEqual({});
